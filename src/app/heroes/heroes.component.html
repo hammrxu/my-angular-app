@@ -1,37 +1,19 @@
-<div>
-    <span>1. [hero_AQ] is a string: </span>
-    <b>{{hero_AQ}}</b>
-</div>
+<h2>My Heroes</h2>
 
-<br>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes">
+    <button [class.selected]="hero === selectedHero" type="button" (click)="onSelect(hero)">
+      <span class="badge">{{hero.id}}</span>
+      <span class="name">{{hero.name}}</span>
+    </button>
+  </li>
+</ul>
 
-<div>2. [hero_AW] is an object has id, name, value properties. hero_AW.value use the angular pipe of case transformer to uppercases </div>
-<div>
-    <span>[hero_AW.id]: </span>
-    <b>{{hero_AW.id}}</b>
-</div>
-<div>
-    <span>[hero_AW.name]: </span>
-    <b>{{hero_AW.name}}</b>
-</div>
-<div>
-    <span>[hero_AW.value]: </span>
-    <b>{{hero_AW.value}}</b>
-</div>
-<div>
-    <span>[hero_AW.value] to uppercase: </span>
-    <b>{{hero_AW.value | uppercase}}</b>
-</div>
-
-<br>
-
-<div>3. use the Angular's AppModule, two-way data binding syntax [(ngModel)]</div>
-<div>
-    <label for="name">Hero_AQ string: </label>
-    <!-- placeholder here is overwrited -->
-    <input id="name" [(ngModel)]="hero_AQ" >
-</div>
-<div>
-    <label for="name">Hero_AW name: </label>
-    <input id="name" [(ngModel)]="hero_AW.name" placeholder="name">
+<div *ngIf="selectedHero">
+    <h2>{{selectedHero.name | uppercase}} Details</h2>
+    <div>id: {{selectedHero.id}}</div>
+    <div>
+      <label for="hero-name">Hero name: </label>
+      <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">
+    </div>
 </div>

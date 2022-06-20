@@ -2,5 +2,4 @@
 export interface Hero{
     id: number;
     name: string;
-    value: string;
 }
