@@ -26,7 +26,8 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
-
+Seperate the hero and hero detail into logic and view.
 ![alt text](screenshots/1.png)
 ![alt text](screenshots/2.png)
 ![alt text](screenshots/3.png)
+![alt text](screenshots/4.png)
